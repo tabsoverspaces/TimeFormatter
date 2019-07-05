@@ -72,19 +72,19 @@ SingleSuffixTimeFormat singleSuffixTimeFormat = SingleSuffixTimeFormat.getInstan
 */
 
 // verbal format
-String formattedTimePeriodVerbal1 = timeFormatter.format(timePeriod, verbalTimeFormat));
+String formattedTimePeriodVerbal1 = timeFormatter.format(timePeriod, verbalTimeFormat);
 
 // single suffix format
-String formattedTimePeriodSingleSuffix1 = timeFormatter.format(timePeriod, singleSuffixTimeFormat));
+String formattedTimePeriodSingleSuffix1 = timeFormatter.format(timePeriod, singleSuffixTimeFormat);
 
 /*
 * Formatting with significant units argument.
 */
 
 // verbal format with 3 significant units
-String formattedTimePeriodVerbal2 = timeFormatter.format(timePeriod, verbalTimeFormat, 3));
+String formattedTimePeriodVerbal2 = timeFormatter.format(timePeriod, verbalTimeFormat, 3);
 
 // single suffix format with 4 significant units
-String formattedTimePeriodSingleSuffix2 = timeFormatter.format(timePeriod, singleSuffixTimeFormat, 4));
+String formattedTimePeriodSingleSuffix2 = timeFormatter.format(timePeriod, singleSuffixTimeFormat, 4);
 ```
 
