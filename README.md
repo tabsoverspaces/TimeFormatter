@@ -62,11 +62,29 @@ Currently, there are 6 time units available in total:
 Ex.
 ```java
 long timePeriod = 200_000; // 200.000 milliseconds, or 200 seconds, or three minutes and 20 seconds.
+TimeFormatter timeFormatter = TimeFormatter.getInstance();
+VerbalTimeFormat verbalTimeFormat = VerbalTimeFormat.getInstance();
+SingleSuffixTimeFormat singleSuffixTimeFormat.getInstance();
 
-// time period formatted using the verbal format type
-String formattedTimePeriodVerbal = TimeFormatter.getInstance().format(timePeriod, VerbalTimeFormat.getInstance()));
+/*
+* Formatting without explicitly providing a number of significant units.
+* By default, this will show all time units present in the provided time period.
+/
 
-// time period formatted using the single suffix format type
-String formattedTimePeriodSingleSuffix = TimeFormatter.getInstance().format(timePeriod, SingleSuffixTimeFormat.getInstance()));
+// verbal format
+String formattedTimePeriodVerbal = TimeFormatter.getInstance().format(timePeriod, verbalTimeFormat));
+
+// single suffix format
+String formattedTimePeriodSingleSuffix = TimeFormatter.getInstance().format(timePeriod, singleSuffixTimeFormat));
+
+/*
+* Formatting with significant units argument.
+/
+
+// verbal format with 3 significant units
+String formattedTimePeriodVerbal = TimeFormatter.getInstance().format(timePeriod, verbalTimeFormat, 3));
+
+// single suffix format with 4 significant units
+String formattedTimePeriodSingleSuffix = TimeFormatter.getInstance().format(timePeriod, singleSuffixTimeFormat, 4));
 ```
 
