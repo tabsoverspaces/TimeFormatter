@@ -60,7 +60,7 @@ Currently, there are 6 time units available in total:
 2. Use one of the two available overloading methods named 'format'.
 
 Ex.
-``java
+```java
 long timePeriod = 200_000; // 200.000 milliseconds, or 200 seconds, or three minutes and 20 seconds.
 
 // time period formatted using the verbal format type
@@ -68,5 +68,5 @@ String formattedTimePeriodVerbal = TimeFormatter.getInstance().format(timePeriod
 
 // time period formatted using the single suffix format type
 String formattedTimePeriodSingleSuffix = TimeFormatter.getInstance().format(timePeriod, SingleSuffixTimeFormat.getInstance()));
-``
+```
 
