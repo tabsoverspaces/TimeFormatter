@@ -69,7 +69,7 @@ SingleSuffixTimeFormat singleSuffixTimeFormat.getInstance();
 /*
 * Formatting without explicitly providing a number of significant units.
 * By default, this will show all time units present in the provided time period.
-/
+*/
 
 // verbal format
 String formattedTimePeriodVerbal = TimeFormatter.getInstance().format(timePeriod, verbalTimeFormat));
@@ -79,7 +79,7 @@ String formattedTimePeriodSingleSuffix = TimeFormatter.getInstance().format(time
 
 /*
 * Formatting with significant units argument.
-/
+*/
 
 // verbal format with 3 significant units
 String formattedTimePeriodVerbal = TimeFormatter.getInstance().format(timePeriod, verbalTimeFormat, 3));
