@@ -63,7 +63,7 @@ If the user-provided number of time units is bigger than the number of time unit
 
 Ex.
 ```java
-long timePeriod = 200_000; // 200.000 milliseconds, or 200 seconds, or three minutes and 20 seconds.
+long timePeriod = 200_000_000;
 TimeFormatter timeFormatter = TimeFormatter.getInstance();
 VerbalTimeFormat verbalTimeFormat = VerbalTimeFormat.getInstance();
 SingleSuffixTimeFormat singleSuffixTimeFormat = SingleSuffixTimeFormat.getInstance();
@@ -83,15 +83,15 @@ String formattedTimePeriodSingleSuffix1 = timeFormatter.format(timePeriod, singl
 * Formatting with significant units argument.
 */
 
-// verbal format with 3 significant units
-String formattedTimePeriodVerbal2 = timeFormatter.format(timePeriod, verbalTimeFormat, 3);
+// verbal format with 2 significant units
+String formattedTimePeriodVerbal2 = timeFormatter.format(timePeriod, verbalTimeFormat, 2);
 
-// single suffix format with 4 significant units
-String formattedTimePeriodSingleSuffix2 = timeFormatter.format(timePeriod, singleSuffixTimeFormat, 4);
+// single suffix format with 2 significant units
+String formattedTimePeriodSingleSuffix2 = timeFormatter.format(timePeriod, singleSuffixTimeFormat, 2);
 
 System.out.println("Verbal format - all time units : " + formattedTimePeriodVerbal1);
 System.out.println("Single suffix - all time units : " + formattedTimePeriodSingleSuffix1);
-System.out.println("Verbal format - three time units : " + formattedTimePeriodVerbal2);
-System.out.println("Single suffix - four time units : " + formattedTimePeriodSingleSuffix2);
+System.out.println("Verbal format - two time units : " + formattedTimePeriodVerbal2);
+System.out.println("Single suffix - two time units : " + formattedTimePeriodSingleSuffix2);
 ```
 
