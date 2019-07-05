@@ -2,7 +2,7 @@
 TimeFormatter is a utility class which provides various different ways of formatting (pretty-printing) a given time period. It is (will be) available for multiple programming languages.
 As of the initial commit of version 0.1, only implementation for Java is available.
 
-The formatter works by identifying the largest time unit present in the provided time period of milliseconds, and then formatting all smaller time units, one by one. Time units are better explained below.
+The formatter works by identifying the largest time unit present in the provided time period of milliseconds, and then formatting all smaller time units, one by one. Time units are better explained [here].
 
 ## Formats available
 So far, there are two possible formats available, but more are planned to be added in the future, to allow for more formatting functionality.
@@ -96,3 +96,4 @@ System.out.println("Verbal format - two time units : " + formattedTimePeriodVerb
 System.out.println("Single suffix - two time units : " + formattedTimePeriodSingleSuffix2);
 ```
 
+[here]: https://github.com/tabsoverspaces/TimeFormatter#time-units
