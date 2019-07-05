@@ -58,6 +58,13 @@ etc.
 
 If the user-provided number of time units is bigger than the number of time units found in the provided time period, then the smaller value will be used.
 
+### DISCLAIMER
+Due to the way time units are implemented and represented in the software, this formatter does in no way handle (extreme) precision(i.e taking leap years into consideration, 30/31 day months). Thus, its use is in no way suitable for time-critical systems, but rather more loosely based software solutions. 
+
+### DISCLAIMER 2
+Considering the previous disclaimer, this software might be used in systems where the minimal time period granularity is one second and whose time periods are not greater than 30 days. 
+This way, there is no imprecision happening when formatting months(30/31 days) and there is no issue with milliseconds.
+
 ## Usage
 ### Java
 1. Get the 'java_util' package which contains all necessary class files and add it to your project.
