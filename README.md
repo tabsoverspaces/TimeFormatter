@@ -54,6 +54,8 @@ Currently, there are 6 time units available in total:
 5) months ( containing 30 days )
 6) years ( each containing 12 months )
 
+If the user-provided number of time units is bigger than the number of time units found in the provided time period, then the smaller value will be used.
+
 ## Usage
 ### Java
 1. Get the 'java_util' package which contains all necessary class files and add it to your project.
@@ -86,5 +88,10 @@ String formattedTimePeriodVerbal2 = timeFormatter.format(timePeriod, verbalTimeF
 
 // single suffix format with 4 significant units
 String formattedTimePeriodSingleSuffix2 = timeFormatter.format(timePeriod, singleSuffixTimeFormat, 4);
+
+System.out.println("Verbal format - all time units : " + formattedTimePeriodVerbal1);
+System.out.println("Single suffix - all time units : " + formattedTimePeriodSingleSuffix1);
+System.out.println("Verbal format - three time units : " + formattedTimePeriodVerbal2);
+System.out.println("Single suffix - four time units : " + formattedTimePeriodSingleSuffix2);
 ```
 
