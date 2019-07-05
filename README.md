@@ -36,11 +36,11 @@ For example, if you wanted to format and print a time period with the verbal tim
 
 Here are a couple of examples to illustrate this:
 Ex.
-1) 4 significant units
+#### - 4 significant units
 - 3 years, 6 months, 2 days and 7 hours
 - 1 month, 22 hours, 32 minutes and 14 seconds
 
-2) 3 significant units
+#### - 3 significant units
 - 5 years, 8 months and 25 days
 - 11 days, 45 hours and 2 minutes
 - 8 hours, 12 minutes and 24 seconds
