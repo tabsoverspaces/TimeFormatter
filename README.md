@@ -2,24 +2,37 @@
 TimeFormatter is a utility class which provides various different ways of formatting (pretty-printing) a given time period. It is (will be) available for multiple programming languages.
 As of the initial commit of version 0.1, only implementation for Java is available.
 
+The formatter works by identifying the largest time unit present in the provided time period of milliseconds, and then formatting all smaller time units, one by one. Time units are better explained below.
+
 ## Formats available
 So far, there are two possible formats available, but more are planned to be added in the future, to allow for more formatting functionality.
 
 ### Verbal time format
 This format can return a string of the given time period in the following shape:
 
-- xx seconds
-- xx minutes and xx seconds
-- xx hours, xx minutes and xx seconds
-- xx days, xx hours, xx minutes and xx seconds
+- xx years, xx months, xx days, xx hours, xx minutes and xx seconds
 - xx months, xx days, xx hours, xx minutes and xx seconds
+- xx days, xx hours, xx minutes and xx seconds
+- xx hours, xx minutes and xx seconds
+- xx minutes and xx seconds
+- xx seconds
 
+### Single suffix time format
+This format returns the string with values for each time units being followed by a single-letter suffix.
+That can look like this:
 
+- xxy:xxM:xxd:xxh:xxm:xxs
+- xxM:xxd:xxh:xxm:xxs
+- xxd:xxh:xxm:xxs
+- xxh:xxm:xxs
+- xxm:xxs
+- xxs
 
 ## Time units
 One important flexibility feature of the formatter is that it allows you to give a value for the number of time units(days, hours, minutes...) that you want your final formatted string to contain.
 For example, if you wanted to format and print a time period with the verbal time format on the scale of a couple of years, but anything less than a day is irrelevant to you, then you can simple state that you only want to see 3 significant units, i.e. years, months and days.
 
+Here are a couple of examples to illustrate this:
 Ex.
 1) 4 significant units
 - 3 years, 6 months, 2 days and 7 hours
@@ -43,7 +56,15 @@ Currently, there are 6 time units available in total:
 ### Java
 1. Get the 'java_util' package which contains all necessary class files and add it to your project.
 2. Use one of the two available overloading methods named 'format'.
-Ex.
 
+Ex.
+``java
 long timePeriod = 200_000; // 200.000 milliseconds, or 200 seconds, or three minutes and 20 seconds.
-String formattedTimePeriod = TimeFormatter.getInstance().format(timePeriod, VerbalTimeFormat.getInstance()));
+
+// time period formatted using the verbal format type
+String formattedTimePeriodVerbal = TimeFormatter.getInstance().format(timePeriod, VerbalTimeFormat.getInstance()));
+
+// time period formatted using the single suffix format type
+String formattedTimePeriodSingleSuffix = TimeFormatter.getInstance().format(timePeriod, SingleSuffixTimeFormat.getInstance()));
+``
+
