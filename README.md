@@ -28,6 +28,8 @@ That can look like this:
 - xxm:xxs
 - xxs
 
+Note: capital M stands for months;  this is to prevent ambiguity between the months and minutes
+
 ## Time units
 One important flexibility feature of the formatter is that it allows you to give a value for the number of time units(days, hours, minutes...) that you want your final formatted string to contain.
 For example, if you wanted to format and print a time period with the verbal time format on the scale of a couple of years, but anything less than a day is irrelevant to you, then you can simple state that you only want to see 3 significant units, i.e. years, months and days.
