@@ -218,7 +218,7 @@ public enum TimeUnit{
             if(nextSignificantUnits>0)
                 formattedString += timeFormat.getJoiningCharacter();
 
-        if( nextSignificantUnits > 0 && !(this==SECONDS)) // TODO fix
+        if(nextSignificantUnits > 0 && !(this==SECONDS))
         {
             formattedString += this.previousUnit().format(nextSmallerUnitMillis, timeFormat, nextSignificantUnits);
         }
