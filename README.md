@@ -91,6 +91,7 @@ String formattedTimePeriodSingleSuffix2 = timeFormatter.format(timePeriod, singl
 
 System.out.println("Verbal format - all time units : " + formattedTimePeriodVerbal1);
 System.out.println("Single suffix - all time units : " + formattedTimePeriodSingleSuffix1);
+
 System.out.println("Verbal format - two time units : " + formattedTimePeriodVerbal2);
 System.out.println("Single suffix - two time units : " + formattedTimePeriodSingleSuffix2);
 ```
