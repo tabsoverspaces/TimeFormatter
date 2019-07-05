@@ -64,7 +64,7 @@ Ex.
 long timePeriod = 200_000; // 200.000 milliseconds, or 200 seconds, or three minutes and 20 seconds.
 TimeFormatter timeFormatter = TimeFormatter.getInstance();
 VerbalTimeFormat verbalTimeFormat = VerbalTimeFormat.getInstance();
-SingleSuffixTimeFormat singleSuffixTimeFormat.getInstance();
+SingleSuffixTimeFormat singleSuffixTimeFormat = SingleSuffixTimeFormat.getInstance();
 
 /*
 * Formatting without explicitly providing a number of significant units.
@@ -72,19 +72,19 @@ SingleSuffixTimeFormat singleSuffixTimeFormat.getInstance();
 */
 
 // verbal format
-String formattedTimePeriodVerbal = TimeFormatter.getInstance().format(timePeriod, verbalTimeFormat));
+String formattedTimePeriodVerbal = timeFormatter.format(timePeriod, verbalTimeFormat));
 
 // single suffix format
-String formattedTimePeriodSingleSuffix = TimeFormatter.getInstance().format(timePeriod, singleSuffixTimeFormat));
+String formattedTimePeriodSingleSuffix = timeFormatter.format(timePeriod, singleSuffixTimeFormat));
 
 /*
 * Formatting with significant units argument.
 */
 
 // verbal format with 3 significant units
-String formattedTimePeriodVerbal = TimeFormatter.getInstance().format(timePeriod, verbalTimeFormat, 3));
+String formattedTimePeriodVerbal = timeFormatter.format(timePeriod, verbalTimeFormat, 3));
 
 // single suffix format with 4 significant units
-String formattedTimePeriodSingleSuffix = TimeFormatter.getInstance().format(timePeriod, singleSuffixTimeFormat, 4));
+String formattedTimePeriodSingleSuffix = timeFormatter.format(timePeriod, singleSuffixTimeFormat, 4));
 ```
 
