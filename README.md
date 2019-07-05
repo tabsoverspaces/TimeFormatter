@@ -28,10 +28,20 @@ That can look like this:
 - xxm:xxs
 - xxs
 
-Note: capital M stands for months;  this is to prevent ambiguity between the months and minutes
+Note: capital M stands for months; this is to prevent ambiguity between the months and minutes
 
 ## Time units
-One important flexibility feature of the formatter is that it allows you to give a value for the number of time units(days, hours, minutes...) that you want your final formatted string to contain.
+One interesting feature is the abstraction of larger time periods (called time units here). Basically (almost) every time period is represented by a separate entity and in the implementation they are organized in a hierarchy, which allows for easy access and management.
+
+Currently, there are 6 time units available:
+1) seconds (each containing 1.000 milliseconds; time periods less than a 1.000 milliseconds are formatted as zero seconds)
+2) minutes (each containing 60 seconds)
+3) hours (each containing 60 minutes)
+4) days (each containing 24 hours)
+5) months (containing 30 days)
+6) years (each containing 12 months)
+
+An important flexibility feature that is thus implemented is the possibility to give a value for the number of time units that you want your final formatted string to contain.
 For example, if you wanted to format and print a time period with the verbal time format on the scale of a couple of years, but anything less than a day is irrelevant to you, then you can simple state that you only want to see 3 significant units, i.e. years, months and days.
 
 Here are a couple of examples to illustrate this:
@@ -45,14 +55,6 @@ Ex.
 - 11 days, 45 hours and 2 minutes
 - 8 hours, 12 minutes and 24 seconds
 etc.
-
-Currently, there are 6 time units available in total:
-1) seconds ( each containing 1.000 milliseconds; time periods less than a 1.000 milliseconds are formatted as zero seconds)
-2) minutes ( each containing 60 seconds )
-3) hours ( each containing 60 minutes )
-4) days ( each containing 24 hours )
-5) months ( containing 30 days )
-6) years ( each containing 12 months )
 
 If the user-provided number of time units is bigger than the number of time units found in the provided time period, then the smaller value will be used.
 
