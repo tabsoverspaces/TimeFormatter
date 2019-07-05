@@ -1,11 +1,11 @@
-#### TimeFormatter
+# TimeFormatter
 TimeFormatter is a utility class which provides various different ways of formatting (pretty-printing) a given time period. It is (will be) available for multiple programming languages.
 As of the initial commit of version 0.1, only implementation for Java is available.
 
 ## Formats available
 So far, there are two possible formats available, but more are planned to be added in the future, to allow for more formatting functionality.
 
-# Verbal time format
+### Verbal time format
 This format can return a string of the given time period in the following shape:
 
 - xx seconds
@@ -39,8 +39,8 @@ Currently, there are 6 time units available in total:
 5) months ( containing 30 days )
 6) years ( each containing 12 months )
 
-### Usage
-## Java
+## Usage
+### Java
 1. Get the 'java_util' package which contains all necessary class files and add it to your project.
 2. Use one of the two available overloading methods named 'format'.
 Ex.
