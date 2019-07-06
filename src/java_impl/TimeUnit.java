@@ -227,7 +227,7 @@ public enum TimeUnit{
     }
 
     /**
-     * @return the method which the current time unit primarily needs to use
+     * @return formatted string containing only the formatted output for the current time unit
      */
     public abstract String getFormattingMethodResult(Long millis, TimeFormat timeFormat);
 
