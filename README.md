@@ -1,6 +1,7 @@
 # TimeFormatter
 TimeFormatter is a utility class which provides various different ways of formatting (pretty-printing) a given time period. It is (will be) available for multiple programming languages.
-As of the initial commit of version 0.1, only implementation for Java is available.
+
+Currently there are implementations available for Java and Crystal.
 
 The formatter works by identifying the largest time unit present in the provided time period of milliseconds, and then formatting all smaller time units, one by one. Time units are better explained [here].
 
@@ -66,13 +67,15 @@ Considering the previous disclaimer, this software might be used in systems wher
 This way, there is no imprecision happening when formatting months(30/31 days) and there is no issue with milliseconds.
 
 ## Usage
+
 ### Java
-1. Get the 'java_util' package which contains all necessary class files and add it to your project.
+1. Get the 'java_impl' package which contains all necessary class files and add it to your project.
 2. Use one of the two available overloading methods named 'format'.
 
 Ex.
 ```java
 long timePeriod = 200_000_000;
+
 TimeFormatter timeFormatter = TimeFormatter.getInstance();
 VerbalTimeFormat verbalTimeFormat = VerbalTimeFormat.getInstance();
 SingleSuffixTimeFormat singleSuffixTimeFormat = SingleSuffixTimeFormat.getInstance();
@@ -103,6 +106,37 @@ System.out.println("Single suffix - all time units : " + formattedTimePeriodSing
 
 System.out.println("Verbal format - two time units : " + formattedTimePeriodVerbal2);
 System.out.println("Single suffix - two time units : " + formattedTimePeriodSingleSuffix2);
+```
+
+### Crystal
+1. Get the 'crystal_impl' package which contains the TimeFormatter module and all the other necessary files and add it to your project.
+2. Use one of the two methods of the TimeFormatter class.
+
+Example usage:
+
+```crystal
+require "./TimeFormatter"
+
+timePeriod : Int64 = 1_000_000
+
+timeFormatter = TimeFormatter::TimeFormatter.instance
+verbalFormat = VerbalTimeFormat.instance
+singleSuffix = SingleSuffixTimeFormat.instance
+
+# Formatting without explictly specifying the number of significant units to be displayed
+formattedVerbal1 = timeFormatter.format(timePeriod, verbalFormat) # verbal format with no significant units argument
+formattedSuffix1 = timeFormatter.format(timePeriod, singleSuffix) # single suffix format with no significant units argument
+
+# Formatting with significant units argument
+formattedVerbal2 = timeFormatter.format(timePeriod, verbalFormat, 2) # verbal format with two significant units
+formattedSuffix2 = timeFormatter.format(timePeriod, singleSuffix, 2) # single suffix format with two significant units
+
+
+puts "Verbal format - all time units : " + formattedVerbal1
+puts "Single suffix - all time units : " + formattedSuffix1
+
+puts "Verbal format - two time units : " + formattedVerbal2
+puts "Single suffix - two time units : " + formattedSuffix2
 ```
 
 [here]: https://github.com/tabsoverspaces/TimeFormatter#time-units
