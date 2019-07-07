@@ -85,20 +85,14 @@ SingleSuffixTimeFormat singleSuffixTimeFormat = SingleSuffixTimeFormat.getInstan
 * By default, this will show all time units present in the provided time period.
 */
 
-// verbal format
-String formattedVerbal = timeFormatter.format(timePeriod, verbalTimeFormat);
 
-// single suffix format
-String formattedSingleSuffix = timeFormatter.format(timePeriod, singleSuffixTimeFormat);
+String formattedVerbal = timeFormatter.format(timePeriod, verbalTimeFormat); // verbal format
+String formattedSingleSuffix = timeFormatter.format(timePeriod, singleSuffixTimeFormat); // single suffix format
 
 /*
 * Formatting with significant units argument.
 */
-
-// verbal format with 2 significant units
 String formattedVerbal2 = timeFormatter.format(timePeriod, verbalTimeFormat, 2);
-
-// single suffix format with 2 significant units
 String formattedSingleSuffix2 = timeFormatter.format(timePeriod, singleSuffixTimeFormat, 2);
 
 System.out.println("Verbal format - all time units : " + formattedVerbal);
