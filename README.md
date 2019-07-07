@@ -72,7 +72,7 @@ This way, there is no imprecision happening when formatting months(30/31 days) a
 1. Get the 'java_impl' package which contains all necessary class files and add it to your project.
 2. Use one of the two available overloading methods named 'format'.
 
-Ex.
+Example usage:
 ```java
 long timePeriod = 200_000_000;
 
@@ -86,26 +86,57 @@ SingleSuffixTimeFormat singleSuffixTimeFormat = SingleSuffixTimeFormat.getInstan
 */
 
 // verbal format
-String formattedTimePeriodVerbal1 = timeFormatter.format(timePeriod, verbalTimeFormat);
+String formattedVerbal = timeFormatter.format(timePeriod, verbalTimeFormat);
 
 // single suffix format
-String formattedTimePeriodSingleSuffix1 = timeFormatter.format(timePeriod, singleSuffixTimeFormat);
+String formattedSingleSuffix = timeFormatter.format(timePeriod, singleSuffixTimeFormat);
 
 /*
 * Formatting with significant units argument.
 */
 
 // verbal format with 2 significant units
-String formattedTimePeriodVerbal2 = timeFormatter.format(timePeriod, verbalTimeFormat, 2);
+String formattedVerbal2 = timeFormatter.format(timePeriod, verbalTimeFormat, 2);
 
 // single suffix format with 2 significant units
-String formattedTimePeriodSingleSuffix2 = timeFormatter.format(timePeriod, singleSuffixTimeFormat, 2);
+String formattedSingleSuffix2 = timeFormatter.format(timePeriod, singleSuffixTimeFormat, 2);
 
-System.out.println("Verbal format - all time units : " + formattedTimePeriodVerbal1);
-System.out.println("Single suffix - all time units : " + formattedTimePeriodSingleSuffix1);
+System.out.println("Verbal format - all time units : " + formattedVerbal);
+System.out.println("Verbal format - two time units : " + formattedVerbal2);
 
-System.out.println("Verbal format - two time units : " + formattedTimePeriodVerbal2);
-System.out.println("Single suffix - two time units : " + formattedTimePeriodSingleSuffix2);
+System.out.println("Single suffix - all time units : " + formattedSingleSuffix);
+System.out.println("Single suffix - two time units : " + formattedSingleSuffix2);
+```
+
+### Kotlin
+1. Get the 'kotlin_impl' package which contains the TimeFormatter object and all the other necessary classes.
+2. Use one of the two methods of the TimeFormatter object.
+
+Example usage:
+```kotlin
+val timePeriod = 1_000_000L
+
+val timeFormatter = TimeFormatter
+val verbalFormat = VerbalTimeFormat
+val singleSuffix = SingleSuffixTimeFormat
+
+/*
+Formatting time period without explicitly stating number of time units to be shown
+ */
+val formattedVerbal1 = timeFormatter.format(timePeriod, verbalFormat)
+val formattedSingleSuffix1 = timeFormatter.format(timePeriod, singleSuffix)
+
+/*
+Formatting with significant units argument.
+ */
+val formattedVerbal2 = timeFormatter.format(timePeriod, verbalFormat, 2)
+val formattedSingleSuffix2 = timeFormatter.format(timePeriod, singleSuffix, 2)
+
+println("Verbal format - all time units : $formattedVerbal1")
+println("Verbal format - 2 time units : $formattedVerbal2")
+
+println("Single suffix - all time units : $formattedSingleSuffix1")
+println("Single suffix - 2 time units : $formattedSingleSuffix2")
 ```
 
 ### Crystal
@@ -124,19 +155,19 @@ verbalFormat = VerbalTimeFormat.instance
 singleSuffix = SingleSuffixTimeFormat.instance
 
 # Formatting without explictly specifying the number of significant units to be displayed
-formattedVerbal1 = timeFormatter.format(timePeriod, verbalFormat) # verbal format with no significant units argument
-formattedSuffix1 = timeFormatter.format(timePeriod, singleSuffix) # single suffix format with no significant units argument
+formattedVerbal = timeFormatter.format(timePeriod, verbalFormat) # verbal format with no significant units argument
+formattedSingleSuffix = timeFormatter.format(timePeriod, singleSuffix) # single suffix format with no significant units argument
 
 # Formatting with significant units argument
 formattedVerbal2 = timeFormatter.format(timePeriod, verbalFormat, 2) # verbal format with two significant units
-formattedSuffix2 = timeFormatter.format(timePeriod, singleSuffix, 2) # single suffix format with two significant units
+formattedSingleSuffix2 = timeFormatter.format(timePeriod, singleSuffix, 2) # single suffix format with two significant units
 
 
-puts "Verbal format - all time units : " + formattedVerbal1
-puts "Single suffix - all time units : " + formattedSuffix1
-
+puts "Verbal format - all time units : " + formattedVerbal
 puts "Verbal format - two time units : " + formattedVerbal2
-puts "Single suffix - two time units : " + formattedSuffix2
+
+puts "Single suffix - all time units : " + formattedSingleSuffix
+puts "Single suffix - two time units : " + formattedSingleSuffix2
 ```
 
 [here]: https://github.com/tabsoverspaces/TimeFormatter#time-units
